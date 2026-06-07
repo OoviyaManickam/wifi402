@@ -15,13 +15,6 @@ export const PLANS: Plan[] = [
     priceDisplay: "$0.01",
   },
   {
-    id: "10min",
-    label: "10 Minutes",
-    durationMs: 10 * 60 * 1000,
-    priceUsd: 0.05,
-    priceDisplay: "$0.05",
-  },
-  {
     id: "30min",
     label: "30 Minutes",
     durationMs: 30 * 60 * 1000,
