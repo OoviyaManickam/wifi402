@@ -318,7 +318,7 @@ export default function Home() {
               <circle cx="8" cy="8" r="9" stroke="rgba(255,255,255,0.15)" strokeWidth="1" fill="none" />
             </svg>
           </div>
-          <span style={{ fontWeight: 700, fontSize: 15, letterSpacing: "-0.3px", color: "#fbfaf9" }}>WiFi402</span>
+          <span style={{ fontWeight: 700, fontSize: 15, letterSpacing: "-0.3px", color: "#fbfaf9" }}>WifiX402</span>
         </div>
 
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>

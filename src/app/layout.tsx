@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "WiFi402 — Pay-per-use Internet on Monad",
+  title: "WifiX402 — Pay-per-use Internet on Monad",
   description: "x402 micropayments on Monad Testnet. Pay USDC, get internet access instantly.",
 };
 
