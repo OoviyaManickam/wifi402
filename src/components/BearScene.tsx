@@ -19,16 +19,16 @@ const BEAR_CONFIGS = [
 ];
 
 const POSITIONS: [number, number, number][] = [
-  [-2.2, -0.3, 0],
-  [0,    -0.1, 0],
-  [2.2,  -0.3, 0],
+  [-2.8, -0.2, 0],
+  [0,     0.0, 0],
+  [2.8,  -0.2, 0],
 ];
 
 export default function BearScene({ plans, selectedPlan, onSelectPlan }: BearSceneProps) {
   return (
     <div style={{ width: "100%", height: "100%" }}>
       <Canvas
-        camera={{ position: [0, 0.5, 5.5], fov: 50 }}
+        camera={{ position: [0, 0.8, 4.0], fov: 65 }}
         style={{ background: "transparent" }}
       >
         <Suspense fallback={null}>

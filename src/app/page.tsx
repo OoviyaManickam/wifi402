@@ -154,7 +154,7 @@ export default function Home() {
 
       {/* 3D Bear Scene */}
       {!activeSession && (
-        <div className="flex-1 relative" style={{ minHeight: "60vh" }}>
+        <div className="flex-1 relative" style={{ minHeight: "75vh" }}>
           <BearScene
             plans={PLANS}
             selectedPlan={selectedPlan}
