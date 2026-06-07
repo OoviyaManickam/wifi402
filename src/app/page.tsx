@@ -32,20 +32,20 @@ function OrbitalRings() {
       <div className="orb absolute rounded-full" style={{
         width: 720, height: 720,
         top: -260, left: -200,
-        background: "radial-gradient(circle, rgba(110,84,255,0.18) 0%, transparent 65%)",
+        background: "radial-gradient(circle, rgba(110,84,255,0.12) 0%, transparent 65%)",
       }} />
       {/* Softer blob — bottom right */}
       <div className="orb absolute rounded-full" style={{
         width: 580, height: 580,
         bottom: -180, right: -160,
-        background: "radial-gradient(circle, rgba(131,110,249,0.14) 0%, transparent 65%)",
+        background: "radial-gradient(circle, rgba(131,110,249,0.09) 0%, transparent 65%)",
         animationDelay: "2.5s",
       }} />
       {/* Accent mid blob */}
       <div className="orb absolute rounded-full" style={{
         width: 380, height: 380,
         top: "42%", left: "52%",
-        background: "radial-gradient(circle, rgba(79,71,235,0.10) 0%, transparent 70%)",
+        background: "radial-gradient(circle, rgba(79,71,235,0.07) 0%, transparent 70%)",
         animationDelay: "4s",
       }} />
 
@@ -65,10 +65,10 @@ function OrbitalRings() {
 
 /* ── Ticker tape ── */
 const TICKER_ITEMS = [
-  "x402 MICROPAYMENTS", "MONAD TESTNET", "10,000 TPS",
+  "x402 MICROPAYMENTS", "MONAD TESTNET", "400ms SETTLEMENT",
   "INSTANT FINALITY", "EVM COMPATIBLE", "USDC PAYMENTS",
   "PAY-PER-USE WIFI", "NO SUBSCRIPTION", "TRUSTLESS ACCESS",
-  "x402 MICROPAYMENTS", "MONAD TESTNET", "10,000 TPS",
+  "x402 MICROPAYMENTS", "MONAD TESTNET", "400ms SETTLEMENT",
   "INSTANT FINALITY", "EVM COMPATIBLE", "USDC PAYMENTS",
   "PAY-PER-USE WIFI", "NO SUBSCRIPTION", "TRUSTLESS ACCESS",
 ];
@@ -76,11 +76,11 @@ const TICKER_ITEMS = [
 function Ticker() {
   return (
     <div className="marquee-wrap w-full overflow-hidden border-y py-2.5"
-      style={{ borderColor: "rgba(131,110,249,0.12)", background: "rgba(14,9,28,0.6)" }}>
+      style={{ borderColor: "rgba(131,110,249,0.12)", background: "rgba(245,243,255,0.8)" }}>
       <div className="marquee-track">
         {TICKER_ITEMS.map((item, i) => (
           <span key={i} className="mx-6 text-xs font-semibold tracking-widest"
-            style={{ color: i % 3 === 1 ? "#836EF9" : "rgba(251,250,249,0.35)" }}>
+            style={{ color: i % 3 === 1 ? "#836EF9" : "rgba(14,16,15,0.3)" }}>
             {item}
             <span className="mx-6 opacity-30">◆</span>
           </span>
@@ -96,7 +96,7 @@ function StatBadge({ label, value }: { label: string; value: string }) {
     <div className="flex flex-col items-center gap-0.5 px-5 py-3 rounded-xl"
       style={{ background: "rgba(131,110,249,0.07)", border: "1px solid rgba(131,110,249,0.15)" }}>
       <span className="text-2xl font-bold tracking-tight flicker" style={{ color: "#836EF9" }}>{value}</span>
-      <span className="text-xs tracking-widest uppercase" style={{ color: "rgba(251,250,249,0.4)" }}>{label}</span>
+      <span className="text-xs tracking-widest uppercase" style={{ color: "rgba(14,16,15,0.4)" }}>{label}</span>
     </div>
   );
 }
@@ -130,14 +130,14 @@ function PlanCard({ plan, selected, onClick, index }: {
         transformStyle: "preserve-3d",
         position: "relative",
         background: selected
-          ? "linear-gradient(145deg, rgba(131,110,249,0.2) 0%, rgba(110,84,255,0.08) 100%)"
-          : "rgba(14,9,28,0.7)",
+          ? "linear-gradient(145deg, rgba(131,110,249,0.12) 0%, rgba(110,84,255,0.06) 100%)"
+          : "rgba(245,243,255,0.7)",
         border: selected
           ? "1px solid rgba(131,110,249,0.65)"
-          : "1px solid rgba(131,110,249,0.14)",
+          : "1px solid rgba(131,110,249,0.18)",
         boxShadow: selected
-          ? "0 0 0 1px rgba(131,110,249,0.25), 0 8px 40px rgba(110,84,255,0.18), inset 0 1px 0 rgba(255,255,255,0.06)"
-          : "inset 0 1px 0 rgba(255,255,255,0.03)",
+          ? "0 0 0 1px rgba(131,110,249,0.2), 0 8px 40px rgba(110,84,255,0.12), inset 0 1px 0 rgba(255,255,255,0.8)"
+          : "inset 0 1px 0 rgba(255,255,255,0.9), 0 2px 8px rgba(131,110,249,0.06)",
         backdropFilter: "blur(16px)",
         borderRadius: 16,
         padding: "20px 16px 18px",
@@ -162,7 +162,7 @@ function PlanCard({ plan, selected, onClick, index }: {
       {/* Index label */}
       <div style={{
         fontSize: 10, fontWeight: 700, letterSpacing: "0.15em",
-        color: selected ? "#836EF9" : "rgba(255,255,255,0.2)",
+        color: selected ? "#836EF9" : "rgba(14,16,15,0.25)",
         marginBottom: 10, textTransform: "uppercase",
       }}>
         {String(index + 1).padStart(2, "0")} · {labels[index]}
@@ -170,7 +170,7 @@ function PlanCard({ plan, selected, onClick, index }: {
 
       <div style={{
         fontSize: 28, fontWeight: 800, letterSpacing: "-1px",
-        color: selected ? "#fbfaf9" : "rgba(251,250,249,0.85)",
+        color: selected ? "#0e100f" : "rgba(14,16,15,0.8)",
         marginBottom: 2,
       }}>
         {plan.priceDisplay}
@@ -182,7 +182,7 @@ function PlanCard({ plan, selected, onClick, index }: {
 
       <div style={{
         fontSize: 10, fontWeight: 600, letterSpacing: "0.1em",
-        color: selected ? "rgba(131,110,249,0.6)" : "rgba(255,255,255,0.1)",
+        color: selected ? "rgba(131,110,249,0.5)" : "rgba(14,16,15,0.15)",
         textTransform: "uppercase",
       }}>
         USDC · Monad
@@ -294,7 +294,7 @@ export default function Home() {
   }, [walletClient, address, selectedPlan]);
 
   return (
-    <main style={{ minHeight: "100svh", background: "#0e100f", display: "flex", flexDirection: "column", position: "relative", overflow: "hidden" }}>
+    <main style={{ minHeight: "100svh", background: "#ffffff", display: "flex", flexDirection: "column", position: "relative", overflow: "hidden" }}>
       <OrbitalRings />
 
       {/* ── Nav ── */}
@@ -318,7 +318,7 @@ export default function Home() {
               <circle cx="8" cy="8" r="9" stroke="rgba(255,255,255,0.15)" strokeWidth="1" fill="none" />
             </svg>
           </div>
-          <span style={{ fontWeight: 700, fontSize: 15, letterSpacing: "-0.3px", color: "#fbfaf9" }}>WifiX402</span>
+          <span style={{ fontWeight: 700, fontSize: 15, letterSpacing: "-0.3px", color: "#0e100f" }}>WifiX402</span>
         </div>
 
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
@@ -381,8 +381,7 @@ export default function Home() {
               fontSize: "clamp(80px,18vw,160px)",
               fontWeight: 900,
               letterSpacing: "-4px",
-              color: "#fbfaf9",
-              lineHeight: 1,
+              color: "#0e100f",
               marginBottom: 12,
               fontVariantNumeric: "tabular-nums",
             }} className="number-glow">
@@ -468,7 +467,7 @@ export default function Home() {
               letterSpacing: "-2.5px",
               lineHeight: 1.05,
               textAlign: "center",
-              color: "#fbfaf9",
+              color: "#0e100f",
               maxWidth: 640,
               marginBottom: 0,
             }}
@@ -513,7 +512,7 @@ export default function Home() {
             transition={{ delay: 0.46, duration: 0.5 }}
             style={{ display: "flex", gap: 10, marginBottom: 36 }}
           >
-            <StatBadge value="10k" label="TPS" />
+            <StatBadge value="400ms" label="Settlement" />
             <StatBadge value="<1s" label="Finality" />
             <StatBadge value="$0.01" label="Min. price" />
           </motion.div>
@@ -545,7 +544,7 @@ export default function Home() {
               <button style={{
                 width: "100%", padding: "15px 0", borderRadius: 12,
                 background: "linear-gradient(135deg, rgba(110,84,255,0.3), rgba(131,110,249,0.2))",
-                border: "1px solid rgba(131,110,249,0.2)", color: "rgba(251,250,249,0.35)",
+                border: "1px solid rgba(131,110,249,0.2)", color: "rgba(14,16,15,0.35)",
                 fontSize: 14, fontWeight: 700, cursor: "default",
               }}>
                 Loading…

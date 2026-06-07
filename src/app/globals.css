@@ -9,14 +9,14 @@
 }
 
 :root {
-  --background: #0e100f;
-  --foreground: #fbfaf9;
-  --surface:    #0e091c;
+  --background: #ffffff;
+  --foreground: #0e100f;
+  --surface:    #f5f3ff;
   --purple:     #836EF9;
   --purple-hi:  #6E54FF;
-  --purple-lo:  rgba(131,110,249,0.12);
+  --purple-lo:  rgba(131,110,249,0.10);
   --border:     rgba(131,110,249,0.2);
-  --muted:      #737373;
+  --muted:      #71717a;
 }
 
 @layer base {
@@ -111,12 +111,12 @@ body::after {
 
 .shimmer-text {
   background: linear-gradient(90deg,
-    #fbfaf9 0%,
-    #fbfaf9 25%,
+    #0e100f 0%,
+    #0e100f 25%,
     #836EF9 45%,
-    #a78bfa 55%,
-    #fbfaf9 75%,
-    #fbfaf9 100%
+    #6E54FF 55%,
+    #0e100f 75%,
+    #0e100f 100%
   );
   background-size: 600px 100%;
   -webkit-background-clip: text;
